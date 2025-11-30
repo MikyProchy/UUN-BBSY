@@ -88,14 +88,14 @@ router.patch(
 );
 
 router.patch(
-  "/:id/:itemId/toggle",
+  "/:id/items/:itemId/toggle",
   validateDto(toggleItemStatusDtoIn),
   requireProfile("Owner", "Member"),
   toggleItemStatus,
 );
 
 router.patch(
-  "/archived/:id/restore",
+  "/:id/restore",
   validateDto(restoreArchivedListDtoIn),
   requireProfile("Owner"),
   restoreArchivedList,
@@ -110,7 +110,7 @@ router.delete(
 );
 
 router.delete(
-  "/:id/:itemId",
+  "/:id/items/:itemId",
   validateDto(removeItemDtoIn),
   requireProfile("Owner", "Member"),
   removeItem,
@@ -124,7 +124,7 @@ router.delete(
 );
 
 router.delete(
-  "/:id/members/leave",
+  "/:id/leave",
   validateDto(leaveListDtoIn),
   requireProfile("Member"),
   leaveList,
