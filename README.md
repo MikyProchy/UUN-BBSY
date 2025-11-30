@@ -1,0 +1,1 @@
+This project requires a local MongoDB community server running for local testing
